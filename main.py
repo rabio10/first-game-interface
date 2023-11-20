@@ -9,16 +9,7 @@ width, height = 1024, 768
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("My First Pygame Program")
 Running = True
-# drawing shapes
-screen.fill((120,145,123))
 
-#to draw circle of circles
-x = 450
-y = 384-150
-for i in range(100):
-    pygame.draw.circle(screen,(rand.randint(1,255),rand.randint(1,255),rand.randint(1,255)),(x,y),80,1)
-    x = x + 150 * num.cos(i)
-    y = y + 150 * num.sin(i)
 
 """
 #to draw the cool grid shaped thing
@@ -48,9 +39,19 @@ pygame.display.update()
 # Main game loop
 while Running:
     for event in pygame.event.get():
-        
-
-
         if event.type == pygame.QUIT:
             Running = False
+    
+    # background color of the screen
+    screen.fill((120,145,123))
+
+    #to draw circle of circles
+    x = 450
+    y = 384-150
+    for i in range(100):
+        pygame.draw.circle(screen,(rand.randint(1,255),rand.randint(1,255),rand.randint(1,255)),(x,y),80,1)
+        x = x + 150 * num.cos(i)
+        y = y + 150 * num.sin(i)
+    #updating the screen so the shapes appears
+    pygame.display.update()
             
